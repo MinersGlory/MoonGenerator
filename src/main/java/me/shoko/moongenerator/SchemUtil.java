@@ -26,15 +26,15 @@ import java.io.IOException;
 
 public class SchemUtil {
 
-    public static void loadSchem(Location location, String fileName, File file) {
+    public static void loadSchem(Location location, String fileName) {
         com.sk89q.worldedit.world.World world = null;
+        File schem = new File(MoonGenerator.getPlugin().getDataFolder() + File.separator + "/schematics/" + fileName + ".schem");
 
 
-
-        ClipboardFormat format = ClipboardFormats.findByFile(file);
+        ClipboardFormat format = ClipboardFormats.findByFile(schem);
 
         //read schematic
-        try (ClipboardReader reader = format.getReader(new FileInputStream(MoonGenerator.getPlugin().getDataFolder() + File.separator + "/schematics/" + fileName))) {
+        try (ClipboardReader reader = format.getReader(new FileInputStream(schem))) {
             Clipboard clipboard = reader.read();
 
             // paste schematic
