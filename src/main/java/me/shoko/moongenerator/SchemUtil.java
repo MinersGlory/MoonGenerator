@@ -29,7 +29,7 @@ public class SchemUtil {
 
     public static void loadSchem(Location location, String fileName) {
         com.sk89q.worldedit.world.World world = null;
-        world = BukkitAdapter.adapt(Bukkit.getWorld("Moon"));
+        world = BukkitAdapter.adapt(location.getWorld());
 
         File schem = new File(MoonGenerator.getPlugin().getDataFolder() + File.separator + "/schematics/" + fileName + ".schem");
 
