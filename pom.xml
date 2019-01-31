@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gscraft.shoko</groupId>
-    <artifactId>greatmoongenerator</artifactId>
-    <version>1.1</version>
+    <artifactId>MoonGenerator</artifactId>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
-    <name>Greatmoongenerator</name>
+    <name>MoonGenerator</name>
 
-    <description>The great moon generator plugin for 1.13.2</description>
+    <description>Fork of great moon generator plugin designed for Miners Glory</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -63,6 +63,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>sk89q-repo</id>
+            <url>http://maven.sk89q.com/repo/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -70,6 +74,18 @@
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.13.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sk89q.worldguard</groupId>
+            <artifactId>worldguard-core</artifactId>
+            <version>RELEASE</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sk89q.worldguard</groupId>
+            <artifactId>worldguard-legacy</artifactId>
+            <version>RELEASE</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

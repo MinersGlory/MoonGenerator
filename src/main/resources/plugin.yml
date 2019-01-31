@@ -2,6 +2,7 @@ name: MoonGenerator
 version: ${project.version}
 main: me.shoko.moongenerator.mainMoonGenerator
 api-version: 1.13
-authors: [Shoko]
-description: The best moon generator plugin for mc 1.13.2
-website: http://www.deadhuntercc.fluctis.com/
+depend: [WorldGuard]
+authors: [Shoko, Zethrus]
+description: Moon world plugin for Miners Glory, fork of great moon generator by Shoko
+website: https://minersglory.com
