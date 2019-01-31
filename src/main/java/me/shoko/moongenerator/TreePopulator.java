@@ -24,7 +24,7 @@ public class TreePopulator extends BlockPopulator {
                 int Z = random.nextInt(15);
                 int Y = 1;
                 for (int j = world.getMaxHeight()-1; chunk.getBlock(X, j, Z).getType() == Material.AIR; j--); // Find the highest block of the (X,Z) coordinate chosen.
-                SchemUtil.loadSchem(chunk.getBlock(X, Y, Z).getLocation(), schem, file);
+                SchemUtil.loadSchem(chunk.getBlock(X, Y, Z).getLocation(), schem);
             }
 
         }
