@@ -4,6 +4,7 @@ import com.sk89q.worldedit.EditSession;
 import com.sk89q.worldedit.MaxChangedBlocksException;
 import com.sk89q.worldedit.WorldEdit;
 import com.sk89q.worldedit.WorldEditException;
+import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldedit.bukkit.BukkitWorld;
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import com.sk89q.worldedit.extent.clipboard.Clipboard;
@@ -28,6 +29,8 @@ public class SchemUtil {
 
     public static void loadSchem(Location location, String fileName) {
         com.sk89q.worldedit.world.World world = null;
+        world = BukkitAdapter.adapt(Bukkit.getWorld("Moon"));
+
         File schem = new File(MoonGenerator.getPlugin().getDataFolder() + File.separator + "/schematics/" + fileName + ".schem");
 
 
