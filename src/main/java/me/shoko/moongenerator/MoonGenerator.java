@@ -21,7 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public final class mainMoonGenerator extends JavaPlugin implements Listener {
+public final class MoonGenerator extends JavaPlugin implements Listener {
+
+    public static MoonGenerator plugin;
 
     // Global variables and stuff
     List<String> allowedWorlds;
@@ -77,6 +79,7 @@ public final class mainMoonGenerator extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        plugin = this;
         System.out.println("Enabling Shoko's Moon Generator");
 
         saveDefaultConfig();
@@ -152,5 +155,16 @@ public final class mainMoonGenerator extends JavaPlugin implements Listener {
     public void onDisable() {
         System.out.println("Stopping Shoko's Moon Generator");
         System.out.println("Good bye! Take care, love you <3 -Shoko");
+        plugin = null;
+    }
+
+
+    /**
+     * Get an instance of the main class
+     *
+     * @return an instance of the main class
+     */
+    public static MoonGenerator getPlugin() {
+        return plugin;
     }
 }
