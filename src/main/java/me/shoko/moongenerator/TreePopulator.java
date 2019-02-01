@@ -13,7 +13,7 @@ public class TreePopulator extends BlockPopulator {
     @Override
     public void populate(World world, Random random, Chunk chunk) {
 
-        //TODO: Make string dynamic and add all schem files to a for each (?)
+        //TODO: Make string dynamic and add all schem files in /schematics/trees to a for each (?)
         String schem = "moon_mushroom";
         File file = new File(MoonGenerator.getPlugin().getDataFolder() + File.separator + "/schematics/" + schem);
 
