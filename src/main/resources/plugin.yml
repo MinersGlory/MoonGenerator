@@ -6,3 +6,4 @@ depend: [WorldGuard]
 authors: [Shoko, Zethrus]
 description: Moon world plugin for Miners Glory, fork of great moon generator by Shoko
 website: https://minersglory.com
+load: startup
