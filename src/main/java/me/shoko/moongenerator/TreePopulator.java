@@ -34,9 +34,13 @@ public class TreePopulator extends BlockPopulator {
 
                 //int Y = world.getHighestBlockYAt(X, Z) + 1;;
                 // TODO: Correctly 0-255 getBlock() scan for highest source block
-                for (Y = world.getHighestBlockYAt(X, Z); source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; Y--); // Find highest surface block of the (Y) coordinate.
+                for (Y = world.getHighestBlockYAt(X, Z); source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; Y++); // Find highest surface block of the (Y) coordinate.
                 Y -= 1;
-                for (int j = world.getMaxHeight()-1; source.getBlock(X, j, Z).getType() == Material.AIR; j--); // Find the highest block of the (X,Z) coordinate chosen.
+
+
+                //for (int j = world.getMaxHeight()-1; source.getBlock(X, j, Z).getType() == Material.AIR; j--); // Find the highest block of the (X,Z) coordinate chosen.
+
+
                 int chance = random.nextInt(100);
                 if (chance > 97) {
                     SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moonshroom);
