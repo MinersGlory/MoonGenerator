@@ -18,24 +18,41 @@ public class TreePopulator extends BlockPopulator {
     public void populate(World world, Random random, Chunk source) {
 
         //TODO: Make string dynamic and add all schem files in /schematics/trees to a for each (?)
-        String schem = "moon_mushroom";
+        String moonshroom = "moon_mushroom";
+        String moontreelarge = "moon_treelarge";
+        String moontreemedium = "moon_treemedium";
+        String moontreesmall = "moon_treesmall";
 
         if (random.nextBoolean()) {
             amount = random.nextInt(4) + 1; // Amount of trees
-            for (int i = 1; i < amount; i++) {
+        for (int i = 1; i < amount; i++)
+        {
                 int X = random.nextInt(15);
                 int Z = random.nextInt(15);
                 int Y;
+
+
                 //int Y = world.getHighestBlockYAt(X, Z) + 1;;
-                for (Y = world.getHighestBlockYAt(X, Z)+1; source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; Y--); // Find highest surface block of the (Y) coordinate.
+                // TODO: Correctly 0-255 getBlock() scan for highest source block
+                for (Y = world.getHighestBlockYAt(X, Z); source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; Y--); // Find highest surface block of the (Y) coordinate.
                 Y -= 1;
                 for (int j = world.getMaxHeight()-1; source.getBlock(X, j, Z).getType() == Material.AIR; j--); // Find the highest block of the (X,Z) coordinate chosen.
                 int chance = random.nextInt(100);
-                if (chance > 34) {
-                    SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(), schem);
-
-                    // For debugging to see if this even triggers
-                    MoonGenerator.getPlugin().getLogger().info("A SCHEM HAS BEEN SPAWNED");
+                if (chance > 97) {
+                    SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moonshroom);
+                    MoonGenerator.getPlugin().getLogger().info("SPAWNED A MOONSHROOM");
+                }
+                if (chance  > 86) {
+                    SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moontreelarge);
+                    MoonGenerator.getPlugin().getLogger().info("SPAWNED A LARGE MOON TREE");
+                }
+                if (chance > 64) {
+                    SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moontreemedium);
+                    MoonGenerator.getPlugin().getLogger().info("SPAWNED A MEDIUM MOON TREE");
+                }
+                if (chance > 54) {
+                    SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moontreesmall);
+                    MoonGenerator.getPlugin().getLogger().info("SPAWNED A SMALL MOON TREE");
                 }
             }
         }
