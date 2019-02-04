@@ -19,7 +19,6 @@ public class TreePopulator extends BlockPopulator {
 
         //TODO: Make string dynamic and add all schem files in /schematics/trees to a for each (?)
         String schem = "moon_mushroom";
-        File file = new File(MoonGenerator.getPlugin().getDataFolder() + File.separator + "/schematics/" + schem);
 
         if (random.nextBoolean()) {
             amount = random.nextInt(4) + 1; // Amount of trees
@@ -32,7 +31,7 @@ public class TreePopulator extends BlockPopulator {
                 if (chance > 34) {
                     SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(), schem);
 
-                    // For debugging to see if this even triggers 
+                    // For debugging to see if this even triggers
                     MoonGenerator.getPlugin().getLogger().info("A SCHEM HAS BEEN SPAWNED");
                 }
             }
