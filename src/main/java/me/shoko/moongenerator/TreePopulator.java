@@ -34,7 +34,7 @@ public class TreePopulator extends BlockPopulator {
 
                 //int Y = world.getHighestBlockYAt(X, Z) + 1;;
                 // TODO: Correctly 0-255 getBlock() scan for highest source block
-                for (Y = world.getHighestBlockYAt(X, Z); source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; Y++); // Find highest surface block of the (Y) coordinate.
+                for (Y = world.getHighestBlockYAt(X, Z)+1; source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK;); // Find highest surface block of the (Y) coordinate.
                 Y -= 1;
 
 
