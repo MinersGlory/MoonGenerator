@@ -27,7 +27,7 @@ public class TreePopulator extends BlockPopulator {
                 int Z = random.nextInt(15);
                 int Y;
                 //int Y = world.getHighestBlockYAt(X, Z) + 1;;
-                for (Y = world.getMaxHeight()-1; source.getBlock(X, Y, Z).getType() == Material.AIR; Y--);
+                for (Y = world.getHighestBlockYAt(X, Z)+1; source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; Y--); // Find highest surface block of the (Y) coordinate.
                 Y -= 1;
                 for (int j = world.getMaxHeight()-1; source.getBlock(X, j, Z).getType() == Material.AIR; j--); // Find the highest block of the (X,Z) coordinate chosen.
                 int chance = random.nextInt(100);
