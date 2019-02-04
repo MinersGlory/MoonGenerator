@@ -25,7 +25,7 @@ public class TreePopulator extends BlockPopulator {
             for (int i = 1; i < amount; i++) {
                 int X = random.nextInt(15);
                 int Z = random.nextInt(15);
-                int Y = 1;
+                int Y = world.getHighestBlockYAt(X, Z) + 1;;
                 for (int j = world.getMaxHeight()-1; source.getBlock(X, j, Z).getType() == Material.AIR; j--); // Find the highest block of the (X,Z) coordinate chosen.
                 int chance = random.nextInt(100);
                 if (chance > 34) {
