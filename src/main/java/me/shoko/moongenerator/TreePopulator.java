@@ -40,19 +40,30 @@ public class TreePopulator extends BlockPopulator {
                 int chance = random.nextInt(100);
                 if (chance > 97) {
                     SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moonshroom);
-                    MoonGenerator.getPlugin().getLogger().info("SPAWNED A MOONSHROOM");
+
+                    // DEBUG
+                    //MoonGenerator.getPlugin().getLogger().info("SPAWNED A MOONSHROOM");
                 }
                 if (chance  > 86) {
                     SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moontreelarge);
-                    MoonGenerator.getPlugin().getLogger().info("SPAWNED A LARGE MOON TREE");
+
+
+                    // DEBUG
+                    //MoonGenerator.getPlugin().getLogger().info("SPAWNED A LARGE MOON TREE");
                 }
                 if (chance > 64) {
                     SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moontreemedium);
-                    MoonGenerator.getPlugin().getLogger().info("SPAWNED A MEDIUM MOON TREE");
+
+
+                    // DEBUG
+                    //MoonGenerator.getPlugin().getLogger().info("SPAWNED A MEDIUM MOON TREE");
                 }
                 if (chance > 54) {
                     SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moontreesmall);
-                    MoonGenerator.getPlugin().getLogger().info("SPAWNED A SMALL MOON TREE");
+
+
+                    // DEBUG
+                    //MoonGenerator.getPlugin().getLogger().info("SPAWNED A SMALL MOON TREE");
                 }
             }
         }
