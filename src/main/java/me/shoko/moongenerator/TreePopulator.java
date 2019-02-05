@@ -18,7 +18,7 @@ public class TreePopulator extends BlockPopulator {
     int amount;
 
     @Override
-    public void populate(World world, Random random, Chunk source) {
+    public void populate(World world, Random random, Chunk chunk) {
 
         //TODO: Make string dynamic and add all schem files in /schematics/trees to a for each (?)
         String moonshroom = "moon_mushroom";
@@ -34,24 +34,24 @@ public class TreePopulator extends BlockPopulator {
                 int Z = random.nextInt(15);
                 //int Y;
                 int Y = world.getHighestBlockYAt(X,Z);
-                for(int i2 = -1; i2<Y+1; i2++){
+                for(int i2 = world.getMaxHeight(); i2<Y+1; i2--){
                     // set chance out of 100
                     int chance = random.nextInt(100);
                     //Block b = world.getBlockAt(X, Y+i2, Z);
-                    if (source.getBlock(X, Y+i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
+                    if (chunk.getBlock(X, Y+i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
 
 
                         if (chance > 97) {
-                            SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moonshroom);
+                            SchemUtil.loadSchem(chunk.getBlock(X, Y, Z).getLocation(),moonshroom);
 
                             // DEBUG
                             //MoonGenerator.getPlugin().getLogger().info("SPAWNED A MOONSHROOM");
                         }
                     }
 
-                    if (source.getBlock(X, Y+i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
+                    if (chunk.getBlock(X, Y+i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
                         if (chance  > 86) {
-                            SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moontreelarge);
+                            SchemUtil.loadSchem(chunk.getBlock(X, Y, Z).getLocation(),moontreelarge);
 
 
                             // DEBUG
@@ -59,9 +59,9 @@ public class TreePopulator extends BlockPopulator {
                         }
                     }
 
-                    if (source.getBlock(X, Y+i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
+                    if (chance > 64 && chunk.getBlock(X, Y+i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
                         if (chance > 64) {
-                            SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moontreemedium);
+                            SchemUtil.loadSchem(chunk.getBlock(X, Y, Z).getLocation(),moontreemedium);
 
 
                             // DEBUG
@@ -69,10 +69,10 @@ public class TreePopulator extends BlockPopulator {
                         }
                     }
 
-                    if (source.getBlock(X, Y + i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
+                    if (chunk.getBlock(X, Y + i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
 
                         if (chance > 54) {
-                            SchemUtil.loadSchem(source.getBlock(X, Y, Z).getLocation(),moontreesmall);
+                            SchemUtil.loadSchem(chunk.getBlock(X, Y, Z).getLocation(),moontreesmall);
 
 
                             // DEBUG
@@ -86,9 +86,9 @@ public class TreePopulator extends BlockPopulator {
                 }
 
                 // TODO: Correctly 0-255 getBlock() scan for highest source block
-                //for (Y = world.getHighestBlock(X, Z)-1; source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; Y++); // Find highest surface block of the (Y) coordinate.
-                //for (int j = world.getMaxHeight() - 1; source.getBlock(X, j, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; j--) Y = j; // Find the highest block of the (X,Z) coordinate chosen.
-                //for (int j = world.getHighestBlockYAt(X, Z) - 1; source.getBlock(X, j, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; j--) Y = j; // Find the highest block of the (X,Z) coordinate chosen.
+                //for (Y = world.getHighestBlock(X, Z)-1; chunk.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; Y++); // Find highest surface block of the (Y) coordinate.
+                //for (int j = world.getMaxHeight() - 1; chunk.getBlock(X, j, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; j--) Y = j; // Find the highest block of the (X,Z) coordinate chosen.
+                //for (int j = world.getHighestBlockYAt(X, Z) - 1; chunk.getBlock(X, j, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; j--) Y = j; // Find the highest block of the (X,Z) coordinate chosen.
 
 
             }
