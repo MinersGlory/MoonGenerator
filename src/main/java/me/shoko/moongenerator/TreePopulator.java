@@ -33,13 +33,13 @@ public class TreePopulator extends BlockPopulator {
                 final Block b;
                 int X = random.nextInt(15);
                 int Z = random.nextInt(15);
-                int Y = 1;
+                int Y = world.getHighestBlockYAt(X, Z);
 
                 //int Y = BlockUtil.getHighestBlock(source.getX());
                 //int Y = world.getHighestBlockYAt(X, Z);
                 // TODO: Correctly 0-255 getBlock() scan for highest source block
                 //for (Y = world.getHighestBlock(X, Z)-1; source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; Y++); // Find highest surface block of the (Y) coordinate.
-                for (int j = world.getMaxHeight() - 1; source.getBlock(X, j, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; j--) Y = j; // Find the highest block of the (X,Z) coordinate chosen.
+                //for (int j = world.getMaxHeight() - 1; source.getBlock(X, j, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; j--) Y = j; // Find the highest block of the (X,Z) coordinate chosen.
 
                 int chance = random.nextInt(100);
                 if (chance > 97) {

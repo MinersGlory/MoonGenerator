@@ -3,7 +3,10 @@ package me.shoko.moongenerator.utils;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.block.Block;
+
+import java.util.Random;
 
 public class BlockUtil {
 
@@ -12,21 +15,9 @@ public class BlockUtil {
      *
      * @return Block highest non-air
      */
-    public static Integer getHighestBlock(Location loc, Chunk source) {
-        // Return the highest block and get Y
-        for (int i = source.getWorld().getMaxHeight(); i >= 0; i--) {
-
-            Location nloc = new Location(loc.getWorld(), loc.getX(), i, loc.getZ());
-
-            if(nloc.getBlock().getType() != Material.AIR && nloc.getBlock().getType() != Material.BARRIER) {
-                return i + 1;
-            }
-
-            /* find highest moon rock block
-            if ((block = source.getBlock(x, i, z)).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
-                return block;
-            }*/
-        }
-        return 1;
+    public static Location getHighestBlock(World world, Random random) {
+        int x = random.nextInt(world.getMaxHeight()) - world.getMaxHeight() / 2;
+        int z = random.nextInt(world.getMaxHeight()) - world.getMaxHeight() / 2;
+        return new Location(world, x, world.getHighestBlockYAt(x, z), z);
     }
 }
