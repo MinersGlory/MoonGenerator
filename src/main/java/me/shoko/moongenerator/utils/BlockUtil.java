@@ -15,9 +15,13 @@ public class BlockUtil {
      *
      * @return Block highest non-air
      */
-    public static Location getHighestBlock(World world, Random random) {
-        int x = random.nextInt(world.getMaxHeight()) - world.getMaxHeight() / 2;
-        int z = random.nextInt(world.getMaxHeight()) - world.getMaxHeight() / 2;
-        return new Location(world, x, world.getHighestBlockYAt(x, z), z);
+    public static Block getHighestBlock(Chunk chunk, int x, int z) {
+        for(int i=chunk.getWorld().getMaxHeight()-1; i>=0; i--) {
+            Block b = chunk.getBlock(x, i, z);
+            if(b.getType() != Material.AIR) {
+                return b;
+            }
+        }
+        return chunk.getBlock(x, 0, z);
     }
 }
