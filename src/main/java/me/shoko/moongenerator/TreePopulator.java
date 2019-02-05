@@ -38,7 +38,7 @@ public class TreePopulator extends BlockPopulator {
 
                     // set chance out of 100
                     int chance = random.nextInt(100);
-                    if (chunk.getBlock(X, Y+i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
+                    if (chunk.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
 
 
                         if (chance > 97) {
@@ -49,7 +49,7 @@ public class TreePopulator extends BlockPopulator {
                         }
                     }
 
-                    if (chunk.getBlock(X, Y+i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
+                    if (chunk.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
                         if (chance  > 86) {
                             SchemUtil.loadSchem(chunk.getBlock(X, Y, Z).getLocation(),moontreelarge);
 
@@ -59,7 +59,7 @@ public class TreePopulator extends BlockPopulator {
                         }
                     }
 
-                    if (chance > 64 && chunk.getBlock(X, Y+i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
+                    if (chance > 64 && chunk.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
                         if (chance > 64) {
                             SchemUtil.loadSchem(chunk.getBlock(X, Y, Z).getLocation(),moontreemedium);
 
@@ -69,7 +69,7 @@ public class TreePopulator extends BlockPopulator {
                         }
                     }
 
-                    if (chunk.getBlock(X, Y + i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
+                    if (chunk.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
 
                         if (chance > 54) {
                             SchemUtil.loadSchem(chunk.getBlock(X, Y, Z).getLocation(),moontreesmall);
