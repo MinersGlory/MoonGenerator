@@ -32,12 +32,12 @@ public class TreePopulator extends BlockPopulator {
             for (int i = 1; i < amount; i++) {
                 int X = random.nextInt(15);
                 int Z = random.nextInt(15);
-                //int Y;
-                int Y = world.getHighestBlockYAt(X,Z);
-                for(int i2 = world.getMaxHeight(); i2<Y+1; i2--){
+                int Y = 1;
+                //int Y = world.getHighestBlockYAt(X,Z);
+                for(int i2 = world.getMaxHeight()-1; chunk.getBlock(X, i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; i2--){
+
                     // set chance out of 100
                     int chance = random.nextInt(100);
-                    //Block b = world.getBlockAt(X, Y+i2, Z);
                     if (chunk.getBlock(X, Y+i2, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK) {
 
 
