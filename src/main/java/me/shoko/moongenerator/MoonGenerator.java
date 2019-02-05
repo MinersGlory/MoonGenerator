@@ -270,7 +270,7 @@ public final class MoonGenerator extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         plugin = this;
-        System.out.println("Enabling Shoko's Moon Generator");
+        System.out.println("Enabling MoonGenerator");
 
         saveDefaultConfig();
 
@@ -395,8 +395,7 @@ public final class MoonGenerator extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        System.out.println("Stopping Shoko's Moon Generator");
-        System.out.println("Good bye! Take care, love you <3 -Shoko");
+        System.out.println("Stopping MoonGenerator");
         plugin = null;
     }
 

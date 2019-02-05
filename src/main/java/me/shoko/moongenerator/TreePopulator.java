@@ -19,7 +19,7 @@ public class TreePopulator extends BlockPopulator {
 
     @Override
     public void populate(World world, Random random, Chunk chunk) {
-
+        //TODO: Block face rotations at random for placement.
         //TODO: Make string dynamic and add all schem files in /schematics/trees to a for each (?)
         String moonshroom = "moon_mushroom";
         String moontreelarge = "moon_treelarge";
