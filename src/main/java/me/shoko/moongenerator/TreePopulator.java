@@ -3,8 +3,10 @@ package me.shoko.moongenerator;
 import me.shoko.moongenerator.utils.BlockUtil;
 import me.shoko.moongenerator.utils.SchemUtil;
 import org.bukkit.Chunk;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.Block;
 import org.bukkit.generator.BlockPopulator;
 
 import java.util.Random;
@@ -26,22 +28,18 @@ public class TreePopulator extends BlockPopulator {
 
         if (random.nextBoolean()) {
             amount = random.nextInt(4) + 1; // Amount of trees
-        for (int i = 1; i < amount; i++)
-        {
+
+            for (int i = 1; i < amount; i++) {
+                final Block b;
                 int X = random.nextInt(15);
                 int Z = random.nextInt(15);
-                //int Y;
+                int Y = 1;
 
-                int Y = BlockUtil.getHighestBlock(source, X, Z);
-                //int Y = world.getHighestBlockYAt(X, Z) + 1;;
+                //int Y = BlockUtil.getHighestBlock(source.getX());
+                //int Y = world.getHighestBlockYAt(X, Z);
                 // TODO: Correctly 0-255 getBlock() scan for highest source block
-                //for (Y = world.getHighestBlockYAt(X, Z)-1; source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; Y++); // Find highest surface block of the (Y) coordinate.
-                //Y -= 1;
-
-
-
-                //for (int j = world.getMaxHeight()-1; source.getBlock(X, j, Z).getType() == Material.AIR; j--) Y = j; // Find the highest block of the (X,Z) coordinate chosen.
-
+                //for (Y = world.getHighestBlock(X, Z)-1; source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; Y++); // Find highest surface block of the (Y) coordinate.
+                for (int j = world.getMaxHeight() - 1; source.getBlock(X, j, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; j--) Y = j; // Find the highest block of the (X,Z) coordinate chosen.
 
                 int chance = random.nextInt(100);
                 if (chance > 97) {
@@ -69,10 +67,12 @@ public class TreePopulator extends BlockPopulator {
 
 
                     // DEBUG
+
+                    //lets see what we get as Y coords
+                    MoonGenerator.getPlugin().getLogger().info(Integer.toString(Y));
                     //MoonGenerator.getPlugin().getLogger().info("SPAWNED A SMALL MOON TREE");
                 }
             }
         }
-
     }
 }
