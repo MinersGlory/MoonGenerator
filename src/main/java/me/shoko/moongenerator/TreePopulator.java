@@ -38,7 +38,7 @@ public class TreePopulator extends BlockPopulator {
                 // TODO: Correctly 0-255 getBlock() scan for highest source block
                 //for (Y = world.getHighestBlock(X, Z)-1; source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; Y++); // Find highest surface block of the (Y) coordinate.
                 //for (int j = world.getMaxHeight() - 1; source.getBlock(X, j, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; j--) Y = j; // Find the highest block of the (X,Z) coordinate chosen.
-                for (int j = world.getMaxHeight() - 1; source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; j++) Y = j; // Find the highest block of the (X,Z) coordinate chosen.
+                for (int j = world.getMaxHeight() - 1; source.getBlock(X, Y, Z).getType() == Material.DEAD_BRAIN_CORAL_BLOCK; j--) Y = j; // Find the highest block of the (X,Z) coordinate chosen.
 
                 int chance = random.nextInt(100);
                 if (chance > 97) {
