@@ -1,4 +1,4 @@
-package me.shoko.moongenerator;
+package me.shoko.moongenerator.populator;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

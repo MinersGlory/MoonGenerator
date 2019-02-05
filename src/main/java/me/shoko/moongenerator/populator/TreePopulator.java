@@ -1,5 +1,6 @@
-package me.shoko.moongenerator;
+package me.shoko.moongenerator.populator;
 
+import me.shoko.moongenerator.MoonGenerator;
 import me.shoko.moongenerator.utils.BlockUtil;
 import me.shoko.moongenerator.utils.SchemUtil;
 import org.bukkit.Chunk;

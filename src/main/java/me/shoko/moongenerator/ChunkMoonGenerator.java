@@ -1,13 +1,11 @@
 package me.shoko.moongenerator;
 
-import org.bukkit.Bukkit;
+import me.shoko.moongenerator.populator.*;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.generator.ChunkGenerator;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.noise.SimplexOctaveGenerator;
 
@@ -80,7 +78,7 @@ public class ChunkMoonGenerator extends ChunkGenerator {
 
     @Override
     public List<BlockPopulator> getDefaultPopulators(World world) {
-        return Arrays.asList(new CraterPopulator(), new OreVeinPopulator(), new FloraPopulator(), new TreePopulator());
+        return Arrays.asList(new TreePopulator(), new MoonCavePopulator(), new CraterPopulator(), new OreVeinPopulator(), new FloraPopulator());
     }
 
 }
