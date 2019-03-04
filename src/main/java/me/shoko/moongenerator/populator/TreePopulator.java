@@ -47,7 +47,7 @@ public class TreePopulator extends BlockPopulator {
 
 
                     if (chance > 97) {
-                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY()-2, Z).getLocation(),moonshroom);
+                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY()+1, Z).getLocation(),moonshroom);
 
                             // DEBUG
                             //MoonGenerator.getPlugin().getLogger().info("SPAWNED A MOONSHROOM");
@@ -67,7 +67,7 @@ public class TreePopulator extends BlockPopulator {
                         //MoonGenerator.getPlugin().getLogger().info("SPAWNED A MEDIUM MOON TREE");
                     }
                     if (chance > 54) {
-                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY()+1, Z).getLocation(),moontreesmall);
+                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY()+5, Z).getLocation(),moontreesmall);
 
                         // DEBUG
                         //lets see what we get as Y coords
