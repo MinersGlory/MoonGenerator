@@ -47,7 +47,7 @@ public class TreePopulator extends BlockPopulator {
 
 
                     if (chance > 97) {
-                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY()+1, Z).getLocation(),moonshroom);
+                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY()-2, Z).getLocation(),moonshroom);
 
                             // DEBUG
                             //MoonGenerator.getPlugin().getLogger().info("SPAWNED A MOONSHROOM");
