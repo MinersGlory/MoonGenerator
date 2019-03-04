@@ -47,31 +47,31 @@ public class TreePopulator extends BlockPopulator {
 
 
                     if (chance > 97) {
-                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY()+1, Z).getLocation(),moonshroom);
+                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY(), Z).getLocation(),moonshroom);
 
                             // DEBUG
                             //MoonGenerator.getPlugin().getLogger().info("SPAWNED A MOONSHROOM");
                     }
                     if (chance  > 86) {
-                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY()+1, Z).getLocation(),moontreelarge);
+                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY(), Z).getLocation(),moontreelarge);
 
 
                         // DEBUG
                         //MoonGenerator.getPlugin().getLogger().info("SPAWNED A LARGE MOON TREE");
                     }
                     if (chance > 64) {
-                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY()+1, Z).getLocation(),moontreemedium);
+                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY(), Z).getLocation(),moontreemedium);
 
 
                         // DEBUG
                         //MoonGenerator.getPlugin().getLogger().info("SPAWNED A MEDIUM MOON TREE");
                     }
                     if (chance > 54) {
-                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY()+5, Z).getLocation(),moontreesmall);
+                        SchemUtil.loadSchem(chunk.getBlock(X, b.getLocation().getBlockY(), Z).getLocation(),moontreesmall);
 
                         // DEBUG
                         //lets see what we get as Y coords
-                        MoonGenerator.getPlugin().getLogger().info(Integer.toString(b.getLocation().getBlockY()+1));
+                        MoonGenerator.getPlugin().getLogger().info(Integer.toString(b.getLocation().getBlockY()));
 
                         //MoonGenerator.getPlugin().getLogger().info("SPAWNED A SMALL MOON TREE");
                     }
